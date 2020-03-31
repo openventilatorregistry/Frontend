@@ -65,7 +65,7 @@ Remember, once you deploy with a custom domain for the first time, it may take u
 
 ## React Styleguide
 
-**Note: This section is a WIP with basic placeholder text only. Nothing here is decided or final**
+This styleguide is inspired by [this article](https://www.codeinwp.com/blog/react-best-practices/), which is recommended reading before continuing here. 
 
 1. [Functional Components](#1-functional-components)
 2. [Hooks](#2-hooks)
@@ -78,11 +78,63 @@ Remember, once you deploy with a custom domain for the first time, it may take u
 
 ### 1. Functional Components
 
-No class-based components!
+We are using functional components only. Class components are deprecated and should not be used. For more information on functional components,
+see [the React docs on the difference](https://reactjs.org/docs/components-and-props.html#function-and-class-components),
+or take a look at the [example component](#8-example-component).
 
 ### 2. Hooks
 
-The rules of hooks
+We will be using hooks to manage state and the React lifecycle. You can review hooks [here](https://reactjs.org/docs/hooks-intro.html).
+Familiarize yourself with use of the `useState` and `useEffect` hooks in particular, and please be sure to know [the rules of hooks](https://reactjs.org/docs/hooks-rules.html)!
+
+_(Note: Reference Redux docs for Redux hooks if Redux is brought into the project.)_
+
+### I need to fetch some data for my component. How should I do that?
+
+Create a custom hook for the fetch. The hook should be stateful, and use an effect (with an appropriate dependency array)
+to fetch, update the state, and finally, return the state.
+
+For example:
+
+```jsx
+import { useEffect, useState } from 'react'
+
+export const fetchVentilatorList = (hospitalId) => {
+  const [ventilatorList, setVentilatorList] = useState([])
+
+  useEffect(() => {
+    fetch(`http://www.openventilatorregistry.org/api/ventilators?hospitalId=${hospitalId}`, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer some-token',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((payload) => setVentilatorList(payload))
+      .catch(console.error)
+  }, [hospitalId]) // the dependency array is very important to avoid render loops!
+
+  return ventilatorList
+}
+```
+
+Then consume the hook like so:
+
+```jsx
+export const Component = () => {
+  const ventilatorList = fetchVentilatorList('some-hospital-id')
+
+  return (
+    <div>
+      {ventilatorList.map((ventilator) => (
+        <Ventilator ventilator={ventilator} />
+      ))}
+    </div>
+  )
+}
+```
+
+Ensure your component is able to handle the initial (unfetched) return value of the hook (in our case, an empty array).
 
 ### 3. Stateful vs Stateless Components
 
