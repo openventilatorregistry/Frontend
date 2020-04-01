@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "ovr-frontend",
   "version": "0.1.0",
   "description": "",
   "scripts": {
@@ -8,39 +8,19 @@
   },
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^2.8.0",
-    "moment": "^2.24.0",
-    "react": "^16.5.2",
-    "react-chartjs-2": "^2.7.6",
-    "react-dom": "^16.5.2"
+    "@babel/preset-react": "^7.9.4",
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.9.0",
     "@babel/runtime": "^7.6.3",
-    "babel-preset-nano-react-app": "^0.1.0",
     "parcel-bundler": "^1.11.0",
     "parcel-plugin-clean-dist": "0.0.6"
-  },
-  "babel": {
-    "presets": [
-      "nano-react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "pragmaFrag": "React.Fragment"
-        }
-      ]
-    ]
   }
 }
