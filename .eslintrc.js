@@ -6,8 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    "prettier",
-    "prettier/react",
+    'plugin:prettier/recommended',
+    'prettier/react',
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,15 +20,14 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'prettier'],
   rules: {
     'max-len': [
       'error',
       {
-        'code': 120
+        code: 120,
       },
     ],
+    'prettier/prettier': 'error',
   },
 };
