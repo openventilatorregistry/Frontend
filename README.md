@@ -206,7 +206,7 @@ Avoid default exports for import sanity.
 
 ### 9. Directory Structure
 
-Pages are the root of a route. Components solely used in the page, place them under a folder named aftet the page under `components`. Any components used in more than one page goes under `common`.
+Pages are the root of a route. Components solely used in the page, place them under a folder named after the page under `components`. Any components used in more than one page goes under `common`.
 
 example:
 
