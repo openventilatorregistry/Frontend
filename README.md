@@ -178,7 +178,7 @@ Prefer functional components and composition. You shouldn't need anything else
 
 Prefer desctructuring props in the functional component body.
 
-Prop typechecking will reduce bugs and nefore a clear component API.
+Prop typechecking will reduce bugs and enforce a clear component API.
 
 ```jsx
 import PropTypes from 'prop-types';
