@@ -101,7 +101,7 @@ Familiarize yourself with use of the `useState` and `useEffect` hooks in particu
 
 _(Note: Reference Redux docs for Redux hooks if Redux is brought into the project.)_
 
-### 3. I need to fetch some data for my component. How should I do that?
+### 3. Fetching data
 
 Create a custom hook for the fetch. The hook should be stateful, and use an effect (with an appropriate dependency array)
 to fetch, update the state, and finally, return the state.
