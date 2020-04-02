@@ -104,7 +104,7 @@ _(Note: Reference Redux docs for Redux hooks if Redux is brought into the projec
 ### 3. Fetching data
 
 Create a custom hook for the fetch. The hook should be stateful, and use an effect (with an appropriate dependency array)
-to fetch, update the state, and finally, return the state.
+to fetch, update the state, and finally, return the state. Errors and loading state should also be captured and exposed in the return value.
 
 For example:
 
