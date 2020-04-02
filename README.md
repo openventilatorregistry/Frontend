@@ -101,10 +101,10 @@ Familiarize yourself with use of the `useState` and `useEffect` hooks in particu
 
 _(Note: Reference Redux docs for Redux hooks if Redux is brought into the project.)_
 
-### 3. I need to fetch some data for my component. How should I do that?
+### 3. Fetching data
 
 Create a custom hook for the fetch. The hook should be stateful, and use an effect (with an appropriate dependency array)
-to fetch, update the state, and finally, return the state.
+to fetch, update the state, and finally, return the state. Errors and loading state should also be captured and exposed in the return value.
 
 For example:
 
@@ -178,7 +178,7 @@ Prefer functional components and composition. You shouldn't need anything else
 
 Prefer desctructuring props in the functional component body.
 
-Prop typechecking will reduce bugs and nefore a clear component API.
+Prop typechecking will reduce bugs and enforce a clear component API.
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -206,7 +206,7 @@ Avoid default exports for import sanity.
 
 ### 9. Directory Structure
 
-Pages are the root of a route. Components solely used in the page, place them under a folder named aftet the page under `components`. Any components used in more than one page goes under `common`.
+Pages are the root of a route. Components solely used in the page, place them under a folder named after the page under `components`. Any components used in more than one page goes under `common`.
 
 example:
 
